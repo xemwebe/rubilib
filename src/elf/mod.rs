@@ -1,4 +1,4 @@
-use crate::blob::{BinaryError, BinaryType, Blob};
+use crate::blob::{BinaryType, Blob, BlobError};
 use crate::table::{Row, RowAction, Table, TableType};
 use std::fmt::{self, Display};
 use strum::FromRepr;
@@ -15,9 +15,9 @@ pub enum ElfError {
     #[error("no elf binary")]
     NoElfBinary,
     #[error("invalid binary")]
-    InvalidBinary(#[from] BinaryError),
-    #[error("internal error")]
     InternalError,
+    #[error("binary corrupted")]
+    BlobCorrupted(#[from] BlobError),
 }
 
 #[derive(Clone, Debug)]

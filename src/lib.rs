@@ -1,6 +1,5 @@
 pub mod blob;
+pub mod binary;
 pub mod elf;
+pub mod pe;
 pub mod table;
-
-#[derive(Clone, serde::Serialize, serde::Deserialize)]
-pub struct EmptyPayload {}
