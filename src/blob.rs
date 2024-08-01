@@ -3,7 +3,7 @@ use std::ffi::CStr;
 use std::fmt::{self, Display};
 use thiserror::Error;
 
-#[derive(Error, Debug)]
+#[derive(Error, Debug, Clone)]
 pub enum BlobError {
     #[error("file not found")]
     FileNotFound,

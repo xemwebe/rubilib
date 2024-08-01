@@ -3,7 +3,7 @@ use thiserror::Error;
 
 type Result<T> = std::result::Result<T, PeError>;
 
-#[derive(Error, Debug)]
+#[derive(Error, Debug, Clone)]
 pub enum PeError {
     #[error("no pe binary")]
     NoPeBinary,
